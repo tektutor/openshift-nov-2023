@@ -682,3 +682,26 @@ No resources found in jegan namespace.
 └─$ oc get rs                                        
 No resources found in jegan namespace.  
 </pre>
+
+
+## Lab - Listing pods
+```
+oc get pods
+oc get pod
+oc get po
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get pods
+No resources found in jegan namespace.
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get pod 
+No resources found in jegan namespace.
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get po 
+No resources found in jegan namespace.  
+</pre>
