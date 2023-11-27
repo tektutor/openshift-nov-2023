@@ -908,4 +908,5 @@ Screenshots
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5941bec9-9537-4d13-a9c8-c3c24577dbb1)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91db6d5b-f6a4-42a3-9a09-c82f84523f3d)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/00c0a9c6-77cc-4bef-8280-9db9b2d24a2e)
-![Uploading image.png…]()
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e8fb68c2-5acb-4a28-bc8a-6b8519cc8ed3)
+
