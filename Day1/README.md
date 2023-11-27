@@ -783,4 +783,5 @@ oc rsh deploy/nginx
 ```
 
 Expected output
-![Uploading image.png…]()
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/78d73dd8-8f63-488c-a19e-fe9fe2c030d3)
+
