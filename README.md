@@ -124,3 +124,29 @@ Once you completed the test, do let me know so that we can start the training.
   - is a components that runs in every node i.e worker and master nodes
   - provides load-balancing to group of pods that belongs to a specific deployment
 
+# Lab Exercises
+
+## Lab - Creating multi containers (Pod) and letting them share same IP in Docker
+```
+docker run -d --name ubuntu_pause --hostname ubuntu1 google/pause:latest
+docker run -dit --name ubuntu1 --network=container:ubuntu_pause ubuntu:22.04 bash
+```
+
+Listing the running containers
+```
+docker ps
+```
+
+Finding the IP Address of ubuntu_pause container
+```
+docker inspect ubuntu_pause | grep IPA
+```
+
+Finding the IP Address of ubuntu1 containers
+```
+docker exec -it ubuntu1 /bin/bash
+hostname -i
+exit
+```
+
+As you have noticed, the ubuntu1 and ubuntu_pause containers shares the IP address, this is how Pods are created in Kubernetes/OpenShift.
