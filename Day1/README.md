@@ -739,3 +739,11 @@ oc get po -w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/12a18101-5022-4c20-956c-3c9ea31e6005)
+
+## Lab - Find details about a replicaset
+```
+oc describe rs/nginx-bb865dc5f
+```
+
+Expected ouptut
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/829acb82-7aab-4a92-ac6a-879e81aeb27a)
