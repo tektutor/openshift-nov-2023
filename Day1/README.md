@@ -806,3 +806,12 @@ Expected output
 NAME                    READY   STATUS    RESTARTS   AGE   IP            NODE                             NOMINATED NODE   READINESS GATES
 nginx-bb865dc5f-whgg6   1/1     Running   0          55m   10.131.0.11   worker-2.ocp.tektutor-ocp-labs   <none>           <none>
 </pre>
+
+## Lab - Port forward a Pod to test/troubleshooting purpose
+To stop the port-forward, press "Ctrl+C".  Port forwarding is used only for testing/troubleshooting purpose, must be avoided in production
+```
+oc port-forward nginx-bb865dc5f-whgg6 8001:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/854bc874-93f6-42e3-8b29-4ef121ef3b39)
