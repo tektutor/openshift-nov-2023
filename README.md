@@ -187,3 +187,18 @@ master-3.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   4h48m   
 worker-1.ocp.tektutor-ocp-labs   Ready    worker                        4h34m   v1.27.6+b49f9d1
 worker-2.ocp.tektutor-ocp-labs   Ready    worker                        4h34m   v1.27.6+b49f9d1  
 </pre>
+
+## Lab - Checking the OpenShift version
+```
+oc version
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc version 
+Client Version: 4.14.3
+Kustomize Version: v5.0.1
+Server Version: 4.14.3
+Kubernetes Version: v1.27.6+b49f9d1  
+</pre>
