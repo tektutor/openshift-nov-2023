@@ -62,10 +62,28 @@ Once you completed the test, do let me know so that we can start the training.
   - Rolling update ie you can upgrade your application workloads from one version to other without any downtime
   - provides in-built monitoring features to check health, liveniness checks for your application workloads
   - load balances features supports both internal and external load balancers
+
 ## OpenShift Overview
+- Red Hat OpenShift is developed on top of Google Kubernetes
+- OpenShift supports all the features of Kubernetes + many additional features
+- Google Kubernetes supports Operators and Custom Resources, with this Kuberenetes allows extending Kubernetes functaionalities
+- Using the Operators and Custom Resources,the Red Team has add many additional features on top of Kubernetes which is distributed in the name of Red Hat OpenShift
+- In other words, Openshift is Red Hat's variant of Kubernetes
 
 ## OpenShift Alternatives
-
+- Docker SWARM
+  - it is very user-friendly
+  - light weight
+  - can be easily installed on laptops with normal configurations
+  - easy to learn
+  - it is not production grade orchestration platform, hence normally used for learning, protyping, dev/qa environments
+  
+- Google Kubernetes
+  - supports only Command Line
+  - production grade
+  - open source, hence can be used for personal and commercial purpose
+  - it does support Kubernetes Dashboard (Web console) as it doesn't support multi-users or login credentails it is considered insecure and opens up some security issues, hence this is one of the first thing Systems Admins disable
+ 
 ## OpenShift High Level Architecture
 
 ## OpenShift Common Resources
