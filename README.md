@@ -202,3 +202,20 @@ Kustomize Version: v5.0.1
 Server Version: 4.14.3
 Kubernetes Version: v1.27.6+b49f9d1  
 </pre>
+
+## Lab - Checking more details about the OpenShift cluster with wide mode
+```
+oc get nodes -o wide
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get nodes -o wide
+NAME                             STATUS   ROLES                         AGE     VERSION           INTERNAL-IP       EXTERNAL-IP   OS-IMAGE                                                       KERNEL-VERSION                 CONTAINER-RUNTIME
+master-1.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   5h57m   v1.27.6+b49f9d1   192.168.122.14    <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
+master-2.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   5h57m   v1.27.6+b49f9d1   192.168.122.88    <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
+master-3.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   5h57m   v1.27.6+b49f9d1   192.168.122.160   <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
+worker-1.ocp.tektutor-ocp-labs   Ready    worker                        5h42m   v1.27.6+b49f9d1   192.168.122.174   <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
+worker-2.ocp.tektutor-ocp-labs   Ready    worker                        5h42m   v1.27.6+b49f9d1   192.168.122.96    <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9  
+</pre>
