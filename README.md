@@ -219,3 +219,7 @@ master-3.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   5h57m   
 worker-1.ocp.tektutor-ocp-labs   Ready    worker                        5h42m   v1.27.6+b49f9d1   192.168.122.174   <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
 worker-2.ocp.tektutor-ocp-labs   Ready    worker                        5h42m   v1.27.6+b49f9d1   192.168.122.96    <none>        Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)   5.14.0-284.41.1.el9_2.x86_64   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9  
 </pre>
+
+Red Hat OpenShift allow install either Red Hat Enterprise Linux (RHEL) or Red Hat Enterprise Core OS on Worker nodes.  For master nodes, the only choice is Red Hat Enterprise Core OS.
+
+With wide mode, we could find the version of CRI-O Container Runtime, IP address of nodes, kernel version of Red Hat Enterprise Core OS, etc.,
