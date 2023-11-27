@@ -774,4 +774,13 @@ oc get pods --all-namespaces -o wide
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/9017e7aa-f823-431c-b98e-3385ff36769f)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ea7f3e57-3103-4868-8073-bfd72ea02a52)
+
+
+## Lab - Getting inside a Pod shell
+```
+oc rsh deploy/nginx
+```
+
+Expected output
 ![Uploading image.png…]()
