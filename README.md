@@ -630,3 +630,33 @@ nginx-7bf8c77b5b   1         1         0       7m30s
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   0/1     1            0           7m49s
 </pre>
+
+## Listing all deployments
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get deployments
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   0/1     1            0           7m49s
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get deployments                             
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   0/1     1            0           12m
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get deployment 
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   0/1     1            0           13m
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get deploy    
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   0/1     1            0           13m  
+</pre>
