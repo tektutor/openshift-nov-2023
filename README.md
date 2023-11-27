@@ -731,6 +731,9 @@ oc get po -w
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5aec686d-79b7-4f17-8a5e-6a29beb49034)
 
+## Info - What happens internally within OpenShift when we create a deployment
+![deployment](deployment.png)
+
 ## Lab - Scale up the number of Pods in nginx deployment
 
 To exit the watch mode, you can use "Ctrl+C"
