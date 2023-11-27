@@ -532,3 +532,20 @@ Expected output
 └─$ oc project          
 Using project "jegan" on server "https://api.ocp.tektutor-ocp-labs:6443".
 </pre>
+
+## Lab - Switching between projects
+```
+oc project default
+oc project jegan
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc project default
+Now using project "default" on server "https://api.ocp.tektutor-ocp-labs:6443".
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc project jegan  
+Now using project "jegan" on server "https://api.ocp.tektutor-ocp-labs:6443".
+</pre>
