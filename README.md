@@ -551,6 +551,7 @@ Now using project "jegan" on server "https://api.ocp.tektutor-ocp-labs:6443".
 </pre>
 
 ## Lab - Deploying your first application using imperative style
+Replace 'jegan' with your name.
 ```
 oc project jegan
 oc create deployment nginx --image=nginx:latest
