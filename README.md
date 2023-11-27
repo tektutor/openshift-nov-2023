@@ -87,7 +87,10 @@ Once you completed the test, do let me know so that we can start the training.
 ## OpenShift High Level Architecture
 
 ## OpenShift Common Resources
-- Pod - group of CRI-o containers, a configuration(JSON object) that is stored/managed within etcd database
+- Pod
+  - group of CRI-o containers, a configuration(JSON object) that is stored/managed within etcd database
+  - one Pod represents one running instance of an application
+  - ideally only one main application should be running within a Pod
 - ReplicaSet 
   - a configuration that is stored/managed within etcd database
   - is a JSON object
