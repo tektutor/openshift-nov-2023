@@ -170,3 +170,20 @@ exit
 ```
 
 As you have noticed, the ubuntu1 and ubuntu_pause containers shares the IP address, this is how Pods are created in Kubernetes/OpenShift.
+
+## Lab - Listing all nodes in the Red Hat OpenShift cluster
+```
+oc get nodes
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get nodes
+NAME                             STATUS   ROLES                         AGE     VERSION
+master-1.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   4h48m   v1.27.6+b49f9d1
+master-2.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   4h49m   v1.27.6+b49f9d1
+master-3.ocp.tektutor-ocp-labs   Ready    control-plane,master,worker   4h48m   v1.27.6+b49f9d1
+worker-1.ocp.tektutor-ocp-labs   Ready    worker                        4h34m   v1.27.6+b49f9d1
+worker-2.ocp.tektutor-ocp-labs   Ready    worker                        4h34m   v1.27.6+b49f9d1  
+</pre>
