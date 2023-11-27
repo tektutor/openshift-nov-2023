@@ -856,3 +856,14 @@ Red Hat OpenShift also supports something called Route
 - If they wanted to keep it as internal only service, then no routes are created
 - If they wanted to expose the application to outside world then they create a route for the ClusterIP Internal service
 - In OpenShift normally no one uses node-port external service
+
+
+## Lab - Creating an Internal ClusterIP Service for nginx deployment
+```
+oc expose deploy/nginx --type=ClusterIP --port=8080
+oc get services
+oc describe service/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/49ab2cb5-c36f-4134-94f9-541f4dfbe42a)
