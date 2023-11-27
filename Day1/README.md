@@ -867,3 +867,45 @@ oc describe service/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/49ab2cb5-c36f-4134-94f9-541f4dfbe42a)
+
+## Lab - Accessing the Internal ClusterIP Service from a test Pod
+
+Let's create test deployment with a single Pod to access the nginx service by its name and IP address.
+```
+oc create deployment test --image=--image=tektutor/spring-ms:1.0
+oc get get deploy,rs,po
+```
+
+Let's get inside the test pod shell and check if service discovery works (i.e accessing a service by its name)
+```
+oc rsh deploy/test
+oc exec -it test-69cc49bb5c-4mzlk sh
+cat /etc/resolv.conf
+curl http://nginx:8080
+exit
+```
+
+The above works based on the /etc/resolv.conf configuration configured by the kubelet on each Pod that is created by the kubelet container agent. You may list the dns-default service as shown below
+```
+oc get daemonset | grep dns
+oc get daemonset -n openshift-dns
+oc get po -n openshift-dns
+oc get svc -n openshift-dns
+```
+From the above you get to know the IP address of dns service is 172.30.0.10, which is the one we saw in the Pod /etc/resolv.conf file. This is how, the service discovery works.
+
+
+Let's access the nginx service by its IP address
+```
+oc exec -it test-69cc49bb5c-4mzlk sh
+curl http://172.30.156.175:8080
+exit
+```
+
+Screenshots
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b43c7689-0cc3-45e6-9a53-a8ae76d4f30b)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6a1d4d7f-6ede-41b5-9902-786a07dce203)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5941bec9-9537-4d13-a9c8-c3c24577dbb1)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91db6d5b-f6a4-42a3-9a09-c82f84523f3d)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/00c0a9c6-77cc-4bef-8280-9db9b2d24a2e)
+![Uploading image.png…]()
