@@ -851,7 +851,7 @@ Two types
    - Advantages - The pods could come from multi-cluster, multi-cloud
    - Drawbacks - Expensive,each Load Balancer services spins a External Load Balancer in AWS/GCP/Azure which will attract charges
 
-Red Hat OpenShift also supports something called Router
+Red Hat OpenShift also supports something called Route
 - In practical world, openshift users always create an Internal Service (ClusterIP)
 - If they wanted to keep it as internal only service, then no routes are created
 - If they wanted to expose the application to outside world then they create a route for the ClusterIP Internal service
