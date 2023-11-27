@@ -765,3 +765,13 @@ oc get imagestreams -n openshift
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a03a0cc1-e6b9-4663-8367-6e35c67d981d)
+
+## Lab - Listing pods from all namespaces
+```
+oc get pods --all-namespaces
+oc get pods --all-namespaces -o wide
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/9017e7aa-f823-431c-b98e-3385ff36769f)
+![Uploading image.png…]()
