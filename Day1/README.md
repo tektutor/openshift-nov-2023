@@ -815,3 +815,26 @@ oc port-forward nginx-bb865dc5f-whgg6 8001:8080
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/854bc874-93f6-42e3-8b29-4ef121ef3b39)
+
+## Info - OpenShift Services
+
+Supports two types of services
+1. Internal Service and
+2. External Service
+
+Internal Services
+- ClusterIP is the internal service supported by Kubernetes/OpenShift
+- ClusterIP service it makes use of internal load-balancer supported by kube-proxy component that runs in every node on the openshift cluster
+
+External Services
+Two types
+1. NodePort Service
+   - uses port-forward mechnanism on every node
+   - when you deploy your application in k8s/openshift you could expose the application to external world using node-port
+   - k8s/openshift reserves port 30000-32767 port range on every node for Node Port external service
+   - when you create a nodeport service for your application deployment, K8s/OpenShift picks a port in the above range that is available on all the nodes within the cluster and reserves that port for your application
+   - depends on internal load-balancer supplied by kube-proxy component that runs on every node within K8s/openshift
+2. Load Balancer Service
+   - also is an external service
+   - meant to be used in public cloud environments like AWS, Azure, GCP, etc.,
+   - but it also works in on-prem if you use MetalLB operator
