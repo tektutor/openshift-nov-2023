@@ -730,3 +730,15 @@ oc get po -w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5aec686d-79b7-4f17-8a5e-6a29beb49034)
+
+## Lab - Scale up the number of Pods in nginx deployment
+
+To exit the watch mode, you can use "Ctrl+C"
+```
+oc get po
+oc scale deploy/nginx --replicas=3
+oc get po -w
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/12a18101-5022-4c20-956c-3c9ea31e6005)
