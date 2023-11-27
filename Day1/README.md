@@ -825,6 +825,8 @@ Supports two types of services
 Internal Services
 - ClusterIP is the internal service supported by Kubernetes/OpenShift
 - ClusterIP service it makes use of internal load-balancer supported by kube-proxy component that runs in every node on the openshift cluster
+- Examples
+  DB servers are exposed as Internal ClusterIP Services so that they are only available to applications running within the same openshift cluster
 
 External Services
 Two types
@@ -834,7 +836,23 @@ Two types
    - k8s/openshift reserves port 30000-32767 port range on every node for Node Port external service
    - when you create a nodeport service for your application deployment, K8s/OpenShift picks a port in the above range that is available on all the nodes within the cluster and reserves that port for your application
    - depends on internal load-balancer supplied by kube-proxy component that runs on every node within K8s/openshift
+    Drawbacks of NodePort External Service
+   - it is not user-friendly for external users as the url would look something like www.facebook.com:32478
+   - it is good for application consumption only
+   - it also forces us to open up many ports in the firewall, which could lead to security issues
+   - Kubernetes supports NodePort as the only external service with internal load balancer
+
 2. Load Balancer Service
    - also is an external service
+   - uses external load balancer not the one supplied by kube-proxy
    - meant to be used in public cloud environments like AWS, Azure, GCP, etc.,
    - but it also works in on-prem if you use MetalLB operator
+   - supported in both Kubernetes/OpenShift
+   - Advantages - The pods could come from multi-cluster, multi-cloud
+   - Drawbacks - Expensive,each Load Balancer services spins a External Load Balancer in AWS/GCP/Azure which will attract charges
+
+Red Hat OpenShift also support something called Router
+- In practical world, openshift users always create an Internal Service (ClusterIP)
+- If they wanted to keep it as internal only service, then no routes are created
+- If they wanted to expose the application to outside world then they create a route for the ClusterIP Internal service
+- In OpenShift normally no one uses node-port external service
