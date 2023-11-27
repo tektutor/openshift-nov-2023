@@ -715,3 +715,15 @@ oc get deploy,rs,po
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6d5d025e-e4d2-4d6c-b2ea-4476f5cc8f9a)
+
+## Lab - Creating nginx deployment with bitnami/nginx docker image
+```
+oc get deploy,rs,po
+
+oc create deployment nginx --image=bitnami/nginx:latest
+
+oc get deploy,rs,po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5aec686d-79b7-4f17-8a5e-6a29beb49034)
