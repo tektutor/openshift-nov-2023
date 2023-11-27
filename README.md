@@ -98,6 +98,7 @@ Once you completed the test, do let me know so that we can start the training.
   - is a JSON Object
   - stored within etcd database
   - has one or more ReplicaSets
+  - this reprents your application deployed within Openshift
 - Controllers
   - are the one which monitors and manages one specific type of OpenShift Resource
   - Deployment Controller
@@ -106,3 +107,15 @@ Once you completed the test, do let me know so that we can start the training.
   - Job Controller
   - StatefulSet Controller
   - DaemonSet Controller
+
+## Openshift components/tools
+- kubectl - Kubernetes command-line client tool
+- oc - openshift command-line client tool
+- kubelet
+  - container agent that runs as a service in all the nodes of OpenShift
+  - this runs in master as well as worker node
+  - this component interacts with the Container Runtime to pull images and manage containers/pods
+- kube-proxy
+  - is a components that runs in every node i.e worker and master nodes
+  - provides load-balancing to group of pods that belongs to a specific deployment
+
