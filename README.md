@@ -549,3 +549,31 @@ Now using project "default" on server "https://api.ocp.tektutor-ocp-labs:6443".
 └─$ oc project jegan  
 Now using project "jegan" on server "https://api.ocp.tektutor-ocp-labs:6443".
 </pre>
+
+## Lab - Deploying your first application using imperative style
+```
+oc project jegan
+oc create deployment nginx --image=nginx:latest
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc create deployment nginx --image=nginx:latest                                                    
+deployment.apps/nginx created
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get deployments                             
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   0/1     1            0           5s
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get replicasets
+NAME               DESIRED   CURRENT   READY   AGE
+nginx-7bf8c77b5b   1         1         0       8s
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get pods       
+NAME                     READY   STATUS              RESTARTS   AGE
+nginx-7bf8c77b5b-nfxx2   0/1     ContainerCreating   0          11s
+</pre>
