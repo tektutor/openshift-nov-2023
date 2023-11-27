@@ -660,3 +660,25 @@ nginx   0/1     1            0           13m
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE
 nginx   0/1     1            0           13m  
 </pre>
+
+## Lab - Listing replicasets
+```
+oc get replicasets
+oc get replicaset
+oc get rs
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get replicasets
+No resources found in jegan namespace.
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get replicaset 
+No resources found in jegan namespace.
+                                                                                                                                        
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get rs                                        
+No resources found in jegan namespace.  
+</pre>
