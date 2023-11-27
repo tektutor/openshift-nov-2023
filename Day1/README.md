@@ -758,3 +758,10 @@ oc get po -l app=nginx,pod-template-hash=bb865dc5f
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ef782336-ea19-45b2-9681-3de154f19849)
 
+## Lab - Listing all container images present in the OpenShift's Local Container Registry
+```
+oc get imagestreams -n openshift
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a03a0cc1-e6b9-4663-8367-6e35c67d981d)
