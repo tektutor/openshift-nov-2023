@@ -747,3 +747,14 @@ oc describe rs/nginx-bb865dc5f
 
 Expected ouptut
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/829acb82-7aab-4a92-ac6a-879e81aeb27a)
+
+## Lab - Understanding the use of Labels as Selectors
+```
+oc get po --show-labels
+oc describe rs/nginx-bb865dc5f
+oc get po -l app=nginx,pod-template-hash=bb865dc5f
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ef782336-ea19-45b2-9681-3de154f19849)
+
