@@ -793,3 +793,16 @@ oc exec -it nginx-bb865dc5f-whgg6 sh
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/bc376ea4-6a3b-4da5-aa7c-37d4926f9d27)
+
+## Lab - Finding the IP address of a Pod
+```
+oc get pods -o wide
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc get pods -o wide
+NAME                    READY   STATUS    RESTARTS   AGE   IP            NODE                             NOMINATED NODE   READINESS GATES
+nginx-bb865dc5f-whgg6   1/1     Running   0          55m   10.131.0.11   worker-2.ocp.tektutor-ocp-labs   <none>           <none>
+</pre>
