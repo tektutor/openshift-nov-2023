@@ -87,4 +87,22 @@ Once you completed the test, do let me know so that we can start the training.
 ## OpenShift High Level Architecture
 
 ## OpenShift Common Resources
-
+- Pod - group of CRI-o containers, a configuration(JSON object) that is stored/managed within etcd database
+- ReplicaSet 
+  - a configuration that is stored/managed within etcd database
+  - is a JSON object
+  - how many Pods are supposed to running for a specific application deployment
+  - one or more Pods
+  - each ReplicaSet represents one version of an Application deployment
+- Deployment
+  - is a JSON Object
+  - stored within etcd database
+  - has one or more ReplicaSets
+- Controllers
+  - are the one which monitors and manages one specific type of OpenShift Resource
+  - Deployment Controller
+  - ReplicaSet Controller
+  - Endpoint Controller
+  - Job Controller
+  - StatefulSet Controller
+  - DaemonSet Controller
