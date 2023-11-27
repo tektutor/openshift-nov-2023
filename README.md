@@ -705,3 +705,13 @@ No resources found in jegan namespace.
 └─$ oc get po 
 No resources found in jegan namespace.  
 </pre>
+
+## Lab - Deleting the nginx deployment
+```
+oc get deploy,rs,po
+oc delete deploy/nginx
+oc get deploy,rs,po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6d5d025e-e4d2-4d6c-b2ea-4476f5cc8f9a)
