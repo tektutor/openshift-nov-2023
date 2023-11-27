@@ -126,6 +126,26 @@ Once you completed the test, do let me know so that we can start the training.
 
 # Lab Exercises
 
+## Lab - Checking Docker version
+```
+docker --version
+```
+
+## Lab - Listing Docker images
+```
+docker images
+```
+
+## Lab - Listing all running containers
+```
+docker ps
+```
+
+## Lab - Listing all containers running and exited
+```
+docker ps -a
+```
+
 ## Lab - Creating multi containers (Pod) and letting them share same IP in Docker
 ```
 docker run -d --name ubuntu_pause --hostname ubuntu1 google/pause:latest
