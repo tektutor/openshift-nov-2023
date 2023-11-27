@@ -223,3 +223,128 @@ worker-2.ocp.tektutor-ocp-labs   Ready    worker                        5h42m   
 Red Hat OpenShift allow install either Red Hat Enterprise Linux (RHEL) or Red Hat Enterprise Core OS on Worker nodes.  For master nodes, the only choice is Red Hat Enterprise Core OS.
 
 With wide mode, we could find the version of CRI-O Container Runtime, IP address of nodes, kernel version of Red Hat Enterprise Core OS, etc.,
+
+## Lab - Finding node details
+```
+oc describe node oc describe node master-1.ocp.tektutor-ocp-labs
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023]
+└─$ oc describe node master-1.ocp.tektutor-ocp-labs
+Name:               master-1.ocp.tektutor-ocp-labs
+Roles:              control-plane,master,worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=master-1.ocp.tektutor-ocp-labs
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-ca68def14fd1acac1dcff8c720f4fabf
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-ca68def14fd1acac1dcff8c720f4fabf
+                    machineconfiguration.openshift.io/desiredDrain: uncordon-rendered-master-ca68def14fd1acac1dcff8c720f4fabf
+                    machineconfiguration.openshift.io/lastAppliedDrain: uncordon-rendered-master-ca68def14fd1acac1dcff8c720f4fabf
+                    machineconfiguration.openshift.io/lastSyncedControllerConfigResourceVersion: 23159
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 27 Nov 2023 08:18:14 +0530
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  master-1.ocp.tektutor-ocp-labs
+  AcquireTime:     <unset>
+  RenewTime:       Mon, 27 Nov 2023 14:20:34 +0530
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Mon, 27 Nov 2023 14:16:11 +0530   Mon, 27 Nov 2023 08:18:14 +0530   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 27 Nov 2023 14:16:11 +0530   Mon, 27 Nov 2023 08:18:14 +0530   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 27 Nov 2023 14:16:11 +0530   Mon, 27 Nov 2023 08:18:14 +0530   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 27 Nov 2023 14:16:11 +0530   Mon, 27 Nov 2023 08:23:00 +0530   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.122.14
+  Hostname:    master-1.ocp.tektutor-ocp-labs
+Capacity:
+  cpu:                4
+  ephemeral-storage:  51837932Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15980256Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  46700096229
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             14829280Ki
+  pods:               250
+System Info:
+  Machine ID:                                  fb8fed79a8464960bebbc6a2af8479ad
+  System UUID:                                 fb8fed79-a846-4960-bebb-c6a2af8479ad
+  Boot ID:                                     3ba0d9e3-014a-456a-b358-e17a3e98a069
+  Kernel Version:                              5.14.0-284.41.1.el9_2.x86_64
+  OS Image:                                    Red Hat Enterprise Linux CoreOS 414.92.202311150705-0 (Plow)
+  Operating System:                            linux
+  Architecture:                                amd64
+  Container Runtime Version:                   cri-o://1.27.1-13.1.rhaos4.14.git956c5f7.el9
+  Kubelet Version:                             v1.27.6+b49f9d1
+  Kube-Proxy Version:                          v1.27.6+b49f9d1
+Non-terminated Pods:                           (39 in total)
+  Namespace                                    Name                                                             CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                    ----                                                             ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver                          apiserver-7f7cc84b75-hf7g6                                       110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         5h43m
+  openshift-authentication                     oauth-openshift-7d99c85f84-jsqpz                                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         5h47m
+  openshift-cloud-controller-manager-operator  cluster-cloud-controller-manager-operator-56b94ddf69-rc58w       20m (0%)      0 (0%)      75Mi (0%)        0 (0%)         6h2m
+  openshift-cluster-node-tuning-operator       tuned-sjn8b                                                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         5h56m
+  openshift-cluster-storage-operator           csi-snapshot-controller-5fbf758969-frkh2                         10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         5h57m
+  openshift-cluster-storage-operator           csi-snapshot-webhook-db96ddfcb-trqg8                             10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         5h57m
+  openshift-controller-manager                 controller-manager-6865d48dff-k4qpg                              100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         5h47m
+  openshift-dns                                dns-default-c7p5x                                                60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         5h56m
+  openshift-dns                                node-resolver-kzfrq                                              5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         5h56m
+  openshift-etcd                               etcd-guard-master-1.ocp.tektutor-ocp-labs                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         5h55m
+  openshift-etcd                               etcd-master-1.ocp.tektutor-ocp-labs                              360m (10%)    0 (0%)      910Mi (6%)       0 (0%)         5h47m
+  openshift-image-registry                     image-registry-7b465595c9-n6clv                                  100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         5h46m
+  openshift-image-registry                     node-ca-zllw7                                                    10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         5h48m
+  openshift-ingress-canary                     ingress-canary-599bn                                             10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         5h51m
+  openshift-ingress                            router-default-885dc768d-f76sg                                   100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         5h47m
+  openshift-kube-apiserver                     kube-apiserver-guard-master-1.ocp.tektutor-ocp-labs              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         5h53m
+  openshift-kube-apiserver                     kube-apiserver-master-1.ocp.tektutor-ocp-labs                    290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         5h42m
+  openshift-kube-controller-manager            kube-controller-manager-guard-master-1.ocp.tektutor-ocp-labs     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         5h52m
+  openshift-kube-controller-manager            kube-controller-manager-master-1.ocp.tektutor-ocp-labs           80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         5h41m
+  openshift-kube-scheduler                     openshift-kube-scheduler-guard-master-1.ocp.tektutor-ocp-labs    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         5h48m
+  openshift-kube-scheduler                     openshift-kube-scheduler-master-1.ocp.tektutor-ocp-labs          25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         5h44m
+  openshift-machine-config-operator            machine-config-daemon-566qc                                      40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         5h55m
+  openshift-machine-config-operator            machine-config-server-65ntb                                      20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         5h55m
+  openshift-monitoring                         node-exporter-95zv9                                              9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         5h54m
+  openshift-monitoring                         prometheus-adapter-7dd89d6d4b-r5xtt                              1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         5h48m
+  openshift-monitoring                         prometheus-operator-admission-webhook-84b7fffcdc-b9qdg           5m (0%)       0 (0%)      30Mi (0%)        0 (0%)         5h55m
+  openshift-monitoring                         thanos-querier-69ffdf96db-gwlrx                                  15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         5h48m
+  openshift-multus                             multus-7f7md                                                     10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         6h1m
+  openshift-multus                             multus-additional-cni-plugins-qscpq                              10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         6h1m
+  openshift-multus                             multus-admission-controller-fd5c466d-rcwzw                       20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         5h55m
+  openshift-multus                             network-metrics-daemon-vndsq                                     20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         6h1m
+  openshift-network-diagnostics                network-check-target-rwqlj                                       10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         6h1m
+  openshift-network-node-identity              network-node-identity-hvvnl                                      20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         6h
+  openshift-network-operator                   network-operator-67845fb87b-gn9kk                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         6h1m
+  openshift-oauth-apiserver                    apiserver-545754bbb6-shpvl                                       150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         5h51m
+  openshift-route-controller-manager           route-controller-manager-7ccb5b8-2wqwc                           100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         5h47m
+  openshift-sdn                                sdn-controller-qth74                                             20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         6h1m
+  openshift-sdn                                sdn-x5cfz                                                        110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         6h1m
+  openshift-service-ca                         service-ca-568ccf6fcb-8pnjv                                      10m (0%)      0 (0%)      120Mi (0%)       0 (0%)         5h56m
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                1930m (55%)   0 (0%)
+  memory             5571Mi (38%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:              <none>  
+</pre>
