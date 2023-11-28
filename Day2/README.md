@@ -50,3 +50,20 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/054ffc61-5f75-4fd1-9f80-0d03a3102bd1)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/c16cd6e9-4ba1-400b-b7fb-5b221efb6ee9)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/fafe4f8c-e32f-4b07-be09-d4b43eace88e)
+
+## Lab - Create a clusterip internal service in declarative style
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day2/declarative-manifest
+oc get svc
+oc expose deploy/nginx --port=8080 --dry-run=client -o yaml > nginx-svc.yml
+oc apply -f nginx-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/90c1ad0b-ab68-42cd-bc6f-8bb1fbeceda4)
+
+
