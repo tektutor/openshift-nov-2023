@@ -25,6 +25,10 @@ cd Day2/ingress
 cat ingress.yml
 oc apply -f ingress.yml
 oc get ingress
+oc describe ingress/tektutor
+oc get svc
+curl http://tektutor.apps.ocp.tektutor-ocp-labs/nginx
+curl http://tektutor.apps.ocp.tektutor-ocp-labs/hello
 ```
 
 Expected output
