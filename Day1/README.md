@@ -1,4 +1,4 @@
-# Day1
+# Day1192.168.122.15-192.168.122.25
 ## What is Container Runtime?
 - is a low-level software that knows how manage containers
   - create a new container
@@ -1006,7 +1006,20 @@ You can check if already someone has configured metallb on your cluster
 oc get addresspool -n metallb-system
 oc get metallb -n metallb-system
 ```
+If you see below output, you can skip the configuration as someone has already done it for you
+Output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023/Day1/metallb]
+└─$ oc get addresspool -n metallb-system
+Warning: metallb.io v1beta1 AddressPool is deprecated, consider using IPAddressPool
+NAME                           AGE
+tektutor-metallb-addresspool   20m
 
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023/Day1/metallb]
+└─$ oc get metallb -n metallb-system                    
+NAME      AGE
+metallb   30m
+</pre>
 
 
 Now let's apply the address range updated in address-pool.yml
