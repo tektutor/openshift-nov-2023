@@ -910,3 +910,13 @@ Screenshots
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/00c0a9c6-77cc-4bef-8280-9db9b2d24a2e)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e8fb68c2-5acb-4a28-bc8a-6b8519cc8ed3)
 
+## Lab - Listing services and describe them to find more details
+```
+oc get services
+oc get service
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/99cd2a58-da1a-424d-9932-f3cd18d96f84)
