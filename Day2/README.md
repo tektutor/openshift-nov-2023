@@ -129,6 +129,7 @@ You need to edit nginx-deploy and update the image version from latest to 1.23 a
 cd ~/openshift-nov-2023
 git pull
 cd Day2/declarative-manifest
+oc apply -f nginx-deploy.yml
 vim nginx-deploy.yml
 oc apply -f nginx-deploy.yml
 ```
