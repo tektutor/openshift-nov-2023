@@ -1,6 +1,6 @@
 # Day2
 
-## Day1 Feeback - Kindly provide your Day1 feedback here
+## Day1 Feeback - Kindly provide your feedback here
 https://tcheck.co/2HF9hd
 
 ## Lab - Creating routes to make it accessible outside the cluster
