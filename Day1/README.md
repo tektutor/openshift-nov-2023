@@ -920,3 +920,23 @@ oc describe svc/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/99cd2a58-da1a-424d-9932-f3cd18d96f84)
+
+
+## Lab - Creating an external NodePort service for nginx deployment
+
+Let's delete the existing clusterip service before creating the nodeport service
+```
+oc get svc
+oc delete svc/nginx
+oc get svc
+```
+
+Let's create the nodeport service for nginx deployment now
+```
+oc expose deploy/nginx --type=NodePort --port-8080
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ef38cd40-c061-41f9-b981-cd7329012797)
