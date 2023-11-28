@@ -102,3 +102,19 @@ oc describe svc/nginx
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/335fce62-a1c7-4e8f-acf8-4fddb6ea65bf)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/c21b3e60-8b66-48cf-b6cf-e5484513e575)
+
+
+## Lab - Scaling up nginx deployment in declarative style
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day2/declarative-manifest
+vim nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get deploy
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/36cf3663-e4cd-42e0-a95d-7fffa68f5d3b)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/1fc500ce-d41d-4fcf-8837-9406937cfca1)
