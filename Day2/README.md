@@ -139,6 +139,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f183e472-bdaf-42f3-b2c9-57ffd664e731)
 
 Now edit the nginx-deploy.yml and update the image tag from version 1.23 to 1.24 and save the file before applying.
+```
 cd ~/openshift-nov-2023
 git pull
 cd Day2/declarative-manifest
