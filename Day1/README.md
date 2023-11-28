@@ -951,3 +951,14 @@ curl http://worker-2.ocp.tektutor-ocp-labs:30946
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e43c7f80-d8dd-44b5-aed0-c7473c9297f5)
+
+## Lab - Accessing the NodePort service inside a Pod to try out service discovery
+The service discovery features depends on the openshift-dns service which runs within the openshift cluster, hence service discovery won't work outside the openshift cluster.
+
+```
+oc rsh deploy/test
+curl http://nginx:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3690be50-ac05-4e2d-b12e-1b02ea799e04)
