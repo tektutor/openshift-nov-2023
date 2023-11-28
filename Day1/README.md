@@ -971,8 +971,6 @@ git clone https://github.com/tektutor/openshift-nov-2023
 
 ## Lab - Creating a load balancer service for nginx deployment
 
-
-
 Delete any service you may have created for nginx deployment
 ```
 oc delete svc/nginx
@@ -1001,8 +999,14 @@ oc get nodes -o wide
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/de000617-ead6-45c4-ab67-973c4d0ee8a2)
 
-
 You need to adjust the IP address range as per your cluster setup and apply as shown below. You need to pick an address range that is not used already.
+
+You can check if already someone has configured metallb on your cluster
+```
+oc get addresspool -n metallb-system
+oc get metallb -n metallb-system
+```
+
 
 
 Now let's apply the address range updated in address-pool.yml
