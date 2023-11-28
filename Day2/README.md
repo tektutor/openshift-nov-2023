@@ -150,4 +150,5 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a33bbca2-4c74-415f-b8de-7a1e41f69289)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a7fb6c09-36fe-4d08-b1ea-41b994936271)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ee4e3ef3-f21f-42e8-b76b-362302fa6f47)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a83854c5-aba8-46c5-bd5a-13c0ec5ddfd4)
 
