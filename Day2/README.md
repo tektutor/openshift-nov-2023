@@ -15,6 +15,8 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/7aa71a69-60ed-43c0-a817-64a1910bd481)
 
 ## Lab - Creating ingress routing rules for HAProxy Load Balancer
+Before you apply the ingress manifest file, you need to replace the host from "tektutor.apps.ocp.tektutor-ocp-labs" to "tektutor.apps.ocp4.rps.com"
+
 ```
 oc get svc
 cd ~/openshift-nov-2023
@@ -22,6 +24,7 @@ git pull
 cd Day2/ingress
 cat ingress.yml
 oc apply -f ingress.yml
+oc get ingress
 ```
 
 Expected output
