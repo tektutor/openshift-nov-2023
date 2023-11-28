@@ -49,3 +49,4 @@ oc get deploy,rs,po
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/054ffc61-5f75-4fd1-9f80-0d03a3102bd1)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/c16cd6e9-4ba1-400b-b7fb-5b221efb6ee9)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/fafe4f8c-e32f-4b07-be09-d4b43eace88e)
