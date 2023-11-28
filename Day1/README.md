@@ -998,6 +998,38 @@ cat address-pool.yml
 oc get nodes -o wide
 ```
 
-You need to adjust the IP address as per your cluster setup and apply as shown below
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e9b9a553-b4d3-44c4-8df9-16772a2416e2)
+
+You need to adjust the IP address range as per your cluster setup and apply as shown below. You need to pick an address range that is not used already.
 
 
+Now let's apply the address range updated in address-pool.yml
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day1/metallb
+oc apply -f address-pool.yml
+```
+
+Now let's create an instance of metallb load balancer as shown below
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day1/metallb
+oc apply -f metallb.yml
+```
+
+Now, check your service for external ip in some time
+```
+oc get svc
+oc describe svc/nginx
+```
+
+If you see an external ip, you can access your lb service as shown below
+```
+curl http://192.168.122.15:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91fa2649-ac79-4b89-8966-8079f14328b5)
