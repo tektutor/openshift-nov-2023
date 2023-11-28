@@ -1051,3 +1051,12 @@ curl http://192.168.122.15:8080
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91fa2649-ac79-4b89-8966-8079f14328b5)
+
+
+## Lab - Editing deployment, replicasets and pod live objects in OpenShift cluster
+```
+oc get deploy,rs,po
+oc edit deploy/nginx
+oc edit rs/nginx-bb865dc5f
+oc edit po/nginx-bb865dc5f-fc4zw
+```
