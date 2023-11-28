@@ -29,3 +29,4 @@ oc get ingress
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/76ae8b1c-fec9-4f0e-a315-79824118b51e)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6d0d22bd-da5b-42cc-99ac-cff805815b0f)
