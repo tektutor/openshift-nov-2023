@@ -940,3 +940,14 @@ oc describe svc/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ef38cd40-c061-41f9-b981-cd7329012797)
+
+
+## Lab - Accessing NodePort service
+```
+oc describe svc/nginx
+oc get nodes -o wide
+curl http://worker-2.ocp.tektutor-ocp-labs:30946
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e43c7f80-d8dd-44b5-aed0-c7473c9297f5)
