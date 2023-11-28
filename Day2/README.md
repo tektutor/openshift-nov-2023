@@ -135,3 +135,4 @@ oc apply -f nginx-deploy.yml
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/8a073d43-6246-49b5-8643-46a399e3e74c)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f183e472-bdaf-42f3-b2c9-57ffd664e731)
