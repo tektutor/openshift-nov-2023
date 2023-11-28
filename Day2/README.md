@@ -121,3 +121,17 @@ oc get po
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/36cf3663-e4cd-42e0-a95d-7fffa68f5d3b)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/1fc500ce-d41d-4fcf-8837-9406937cfca1)
+
+## Lab - Rolling update ( Upgrading nginx from one version to other without downtime )
+
+You need to edit nginx-deploy and update the image version from latest to 1.23 as shown in the screenshot before applying.
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day2/declarative-manifest
+vim nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/8a073d43-6246-49b5-8643-46a399e3e74c)
