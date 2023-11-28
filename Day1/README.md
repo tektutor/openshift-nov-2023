@@ -220,7 +220,7 @@ With wide mode, we could find the version of CRI-O Container Runtime, IP address
 
 ## Lab - Finding node details
 ```
-oc describe node oc describe node master-1.ocp.tektutor-ocp-labs
+oc describe node master-1.ocp.tektutor-ocp-labs
 ```
 
 Expected output
