@@ -137,3 +137,17 @@ oc apply -f nginx-deploy.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/8a073d43-6246-49b5-8643-46a399e3e74c)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f183e472-bdaf-42f3-b2c9-57ffd664e731)
+
+Now edit the nginx-deploy.yml and update the image tag from version 1.23 to 1.24 and save the file before applying.
+cd ~/openshift-nov-2023
+git pull
+cd Day2/declarative-manifest
+vim nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a33bbca2-4c74-415f-b8de-7a1e41f69289)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a7fb6c09-36fe-4d08-b1ea-41b994936271)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/ee4e3ef3-f21f-42e8-b76b-362302fa6f47)
+
