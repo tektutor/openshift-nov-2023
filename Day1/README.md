@@ -999,7 +999,8 @@ oc get nodes -o wide
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e9b9a553-b4d3-44c4-8df9-16772a2416e2)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/de000617-ead6-45c4-ab67-973c4d0ee8a2)
+
 
 You need to adjust the IP address range as per your cluster setup and apply as shown below. You need to pick an address range that is not used already.
 
