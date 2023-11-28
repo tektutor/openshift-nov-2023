@@ -962,3 +962,42 @@ curl http://nginx:8080
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3690be50-ac05-4e2d-b12e-1b02ea799e04)
+
+## Lab - Cloning TekTutor OpenShift repository
+```
+cd ~
+git clone https://github.com/tektutor/openshift-nov-2023
+```
+
+## Lab - Creating a load balancer service for nginx deployment
+
+
+
+Delete any service you may have created for nginx deployment
+```
+oc delete svc/nginx
+```
+
+Now let's create a load balancer service for nginx deployment
+```
+oc expose deploy/nginx --type=LoadBalancer --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+Initially, you may see the external IP address in pending state as the MetallB opertor is not configured yet on your clusters.
+
+We need to reserve some IP addresses range for the metallb load balancers that would be created for our lb services.
+
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day1/metallb
+ls
+cat address-pool.yml
+oc get nodes -o wide
+```
+
+You need to adjust the IP address as per your cluster setup and apply as shown below
+
+
