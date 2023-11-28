@@ -67,4 +67,19 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/90c1ad0b-ab68-42cd-bc6f-8bb1fbeceda4)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/36737339-7568-4e1d-b274-15e5687dcfc1)
 
+## Lab - Create a nodeport external service in declarative style
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day2/declarative-manifest
+oc get svc
+oc delete -f nginx-clusterip-svc.yml
+oc expose deploy/nginx --type=NodePort --port=8080 --dry-run=client -o yaml > nginx-nodeport-svc.yml
+oc apply -f nginx-nodeport-svc.yml
+oc get svc
+oc describe svc/nginx
+```
 
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/d477afef-36c9-4b04-8dba-cb7f60d2e93d)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6c5248d7-75c8-4890-997c-c2e200c921f4)
