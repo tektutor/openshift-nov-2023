@@ -65,5 +65,6 @@ oc describe svc/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/90c1ad0b-ab68-42cd-bc6f-8bb1fbeceda4)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/36737339-7568-4e1d-b274-15e5687dcfc1)
 
 
