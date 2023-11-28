@@ -1,4 +1,4 @@
-# Day1
+# Day1192.168.122.15-192.168.122.25
 ## What is Container Runtime?
 - is a low-level software that knows how manage containers
   - create a new container
@@ -971,8 +971,6 @@ git clone https://github.com/tektutor/openshift-nov-2023
 
 ## Lab - Creating a load balancer service for nginx deployment
 
-
-
 Delete any service you may have created for nginx deployment
 ```
 oc delete svc/nginx
@@ -998,6 +996,67 @@ cat address-pool.yml
 oc get nodes -o wide
 ```
 
-You need to adjust the IP address as per your cluster setup and apply as shown below
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/de000617-ead6-45c4-ab67-973c4d0ee8a2)
+
+You need to adjust the IP address range as per your cluster setup and apply as shown below. You need to pick an address range that is not used already.
+
+You can check if already someone has configured metallb on your cluster
+```
+oc get addresspool -n metallb-system
+oc get metallb -n metallb-system
+```
+If you see below output, you can skip the configuration as someone has already done it for you
+Output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023/Day1/metallb]
+└─$ oc get addresspool -n metallb-system
+Warning: metallb.io v1beta1 AddressPool is deprecated, consider using IPAddressPool
+NAME                           AGE
+tektutor-metallb-addresspool   20m
+
+┌──(jegan㉿tektutor.org)-[~/openshift-nov-2023/Day1/metallb]
+└─$ oc get metallb -n metallb-system                    
+NAME      AGE
+metallb   30m
+</pre>
 
 
+Now let's apply the address range updated in address-pool.yml
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day1/metallb
+oc apply -f address-pool.yml
+```
+
+Now let's create an instance of metallb load balancer as shown below
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day1/metallb
+oc apply -f metallb.yml
+```
+
+Now, check your service for external ip in some time
+```
+oc get svc
+oc describe svc/nginx
+```
+
+If you see an external ip, you can access your lb service as shown below
+```
+curl http://192.168.122.15:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91fa2649-ac79-4b89-8966-8079f14328b5)
+
+
+## Lab - Editing deployment, replicasets and pod live objects in OpenShift cluster
+```
+oc get deploy,rs,po
+oc edit deploy/nginx
+oc edit rs/nginx-bb865dc5f
+oc edit po/nginx-bb865dc5f-fc4zw
+```
