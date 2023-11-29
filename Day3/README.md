@@ -47,3 +47,4 @@ oc apply -f mysql-deploy.yml
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b608a309-021a-4595-8207-3d01d1e479cf)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/49adbb81-70cd-4cf0-8520-b9c49520d640)
