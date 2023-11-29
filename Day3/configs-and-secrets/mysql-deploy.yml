@@ -19,10 +19,10 @@ spec:
       volumes:
       - name: mysql-external-storage
         persistentVolumeClaim:
-          valueFrom: 
-            configMapKeyRef: 
+        valueFrom: 
+          configMapKeyRef: 
             name: mysql-cm
-            key: pvclaim_name
+            key: pvclaimname
 
       containers:
       - image: bitnami/mysql:latest

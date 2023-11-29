@@ -5,4 +5,4 @@ metadata:
     app: mysql 
   name: mysql-cm
 data:
-  pvclaim_name: mysql-pvc-jegan 
+  pvclaimname: mysql-pvc-jegan 
