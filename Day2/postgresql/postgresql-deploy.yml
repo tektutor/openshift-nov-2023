@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres
+  name: postgres
+  namespace: default 
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      volumes:
+      - name: pg-external-storage
+        persistentVolumeClaim:
+          claimName: pg-pvc-jegan # Replace 'jegan' with your name
+      containers:
+      volumeMounts:
+      - name: pg-external-storage
+        mountPath: /bitnami/postgresql
+        env:
+        - name: POSTGRES_DB
+          value: jfrog 
+        - name: POSTGRES_USER
+          value: jfrog 
+        - name: POSTGRES_PASSWORD
+          value: jfrog 
+        - name: PGDATA
+          value: /temp/data
+          image: image-registry.openshift-image-registry.svc:5000/openshift/postgresql
+        imagePullPolicy: Always
+        name: postgres
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 60m
+            memory: 512Mi
+          requests:
+            cpu: 30m
+            memory: 128Mi
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: postgres
+  name: postgres
+  namespace: default 
+spec:
+  ports:
+  - name: http
+    port: 5432
+    protocol: TCP
+  selector:
+    app: postgres
