@@ -157,3 +157,6 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/fd41f42f-8c4b-4c45-9e1e-4ae9ce9e10f8)
 
 Let's check the Openshift console if wordpress and mysql got deployed succesffully
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/4ad1201a-c879-4054-9d8d-a47ffee32c58)
+
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/835f5ad4-0193-4dda-9ad5-dd27043ae29e)
