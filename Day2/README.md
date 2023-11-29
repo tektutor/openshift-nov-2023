@@ -185,9 +185,6 @@ Expected output
 
   ## Lab - Deploying mysql db server within OpenShift that makes of user Persistent Volume (external storage)
   ```
-  cd ~/openshift-nov-2023
-  git pull
-  cd Day2/mysql-pv-and-pvc
   oc create deployment mysql --image=bitnami/mysql:latest --dry-run=client -o yaml
   oc create deployment mysql --image=bitnami/mysql:latest --dry-run=client -o yaml > mysql-deploy.yml
   ```
@@ -195,3 +192,18 @@ Expected output
   Expected output
   ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/1fe4fe78-8f14-45c4-98aa-de4444504912)
 
+
+Let us create the Persistent Volume from a NFS Server shared path
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day2/mysql-pv-and-pvc
+oc apply -f mysql-pv.yml
+oc get pv
+oc apply -f mysql-pvc.yml
+oc get pv,pvc
+oc apply -f mysql-deploy.yml
+oc get po
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/d1d663e2-7650-4a0b-a5c7-6d9427ecf485)
