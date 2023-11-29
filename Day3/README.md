@@ -93,6 +93,8 @@ oc apply -f wordpress-svc.yml
 oc apply -f wordpress-route.yml
 ```
 Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e2848922-15bc-4f7f-bcd0-13bcf9bd47f2)
+
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6ac7700d-41be-46f7-aea0-d961c94c9281)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/775add8b-5fb2-493a-9ef1-22fd2b1c1875)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/0a40d48a-4c2a-4c0d-847b-c05c61d0c24d)
