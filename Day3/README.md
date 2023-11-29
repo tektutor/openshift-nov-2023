@@ -48,3 +48,112 @@ oc apply -f mysql-deploy.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b608a309-021a-4595-8207-3d01d1e479cf)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/49adbb81-70cd-4cf0-8520-b9c49520d640)
+
+## Lab - Deploying Wordpress and MariaDB multi-pod application that uses Persistent Volume and Persistent Volume Claims
+In this lab exercise, you will practically learn the below topics
+- Practical use-case of ConfigMaps and Secrets
+- Service Discovery
+- How two different application deployment Pods communicate via Service
+- Using Perristent Volumes and Claims
+- Routes
+- ClusterIP Internal Service
+
+Let's first deploy mariadb db server into Openshift  
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+oc apply -f wordpress-secrets.yml
+oc apply -f wordpress-cm.yml
+oc apply -f mysql-pv.yml
+oc apply -f mysql-pvc.yml
+oc apply -f mysql-deploy.yml
+oc apply -f mysql-svc.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/4386fbff-4aa0-4a80-bcc7-e89df91b2664)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/50dde9cc-1862-4375-a128-d5867c2cc7fc)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/0c0e5377-196e-4a32-9e42-f278d78a7cda)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3be2b3a6-3cd5-4a79-9940-46256d6766e4)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b7a962bf-3b71-4bc0-8c53-f815c958cd6c)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f9217737-c92a-43b7-b84a-6705458aec1d)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/dfccbf02-8c99-456b-b06a-15e70f68c5f9)
+
+
+Let's then deploy wordpress
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e2848922-15bc-4f7f-bcd0-13bcf9bd47f2)
+
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6ac7700d-41be-46f7-aea0-d961c94c9281)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/775add8b-5fb2-493a-9ef1-22fd2b1c1875)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/0a40d48a-4c2a-4c0d-847b-c05c61d0c24d)
+
+## Lab - Installing Helm Package Manager
+
+Installing helm on your lab machine
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+
+## Lab - Creating a helm chart for wordpress deployment
+
+The below helm create command will create a wordpress folder with chart folder structure
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/helm
+helm create wordpress
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f9176ef0-3f20-4d26-b660-47e5c477c4f8)
+
+Let's clean up the some stuffs in wordpress folder
+```
+tree wordpress
+cd wordpress
+echo "" > values.yaml
+cd templates
+rm -rf *
+ls -lha
+cp ../../yaml-files/* .
+cd ../..
+ls
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/43558441-8cab-4f81-b3cf-ece3449b87f3)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/c204d2ea-9756-4ab3-b4ed-9c9d403689fa)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5ce55556-25d1-4387-9832-7776a8f1c15f)
+
+Let's create the helm chart package for our wordpress appilcation which includes deploying wordress and mysql
+```
+cd ~/openshift-nov-2023
+cd Day3/helm
+helm package wordpress
+ls -l
+```
+
+You may now deploy wordpress into openshift with your newly packaged wordress helm chart as shown below
+```
+cd ~/openshift-nov-2023
+cd Day3/helm
+helm install wordpress-0.1.0.tgz
+helm list
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/fd41f42f-8c4b-4c45-9e1e-4ae9ce9e10f8)
+
+Let's check the Openshift console if wordpress and mysql got deployed succesffully
