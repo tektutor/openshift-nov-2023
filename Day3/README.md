@@ -73,6 +73,7 @@ oc apply -f mysql-svc.yml
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/4386fbff-4aa0-4a80-bcc7-e89df91b2664)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/50dde9cc-1862-4375-a128-d5867c2cc7fc)
 
 
 Let's then deploy wordpress
