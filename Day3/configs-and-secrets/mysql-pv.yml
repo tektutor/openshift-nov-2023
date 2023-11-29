@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv-jegan # Replace 'jegan' with your name
+  labels:
+    name: jegan # Replace 'jegan' with your name
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+  - ReadWriteOnce # All the Pods from the same Node can only access this PV
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.127 # Replace this IP with your Server1(10.10.15.32) or Server2(10.10.15.8) or Server3 IP(10.10.15.27) 
+                          # depending on which server you are connected 
+    path: /mnt/nfs/jegan/mysql # Replace this path with /mnt/nfs/user1/mysql folder
