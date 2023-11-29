@@ -48,3 +48,37 @@ oc apply -f mysql-deploy.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b608a309-021a-4595-8207-3d01d1e479cf)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/49adbb81-70cd-4cf0-8520-b9c49520d640)
+
+## Lab - Deploying Wordpress and MariaDB multi-pod application that uses Persistent Volume and Persistent Volume Claims
+In this lab exercise, you will practically learn the below topics
+- Practical use-case of ConfigMaps and Secrets
+- Service Discovery
+- How two different application deployment Pods communicate via Service
+- Using Perristent Volumes and Claims
+- Routes
+- ClusterIP Internal Service
+
+Let's first deploy mariadb db server into Openshift  
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+oc apply -f wordpress-secrets.yml
+oc apply -f wordpress-cm.yml
+oc apply -f mysql-pv.yml
+oc apply -f mysql-pvc.yml
+oc apply -f mysql-deploy.yml
+oc apply -f mysql-svc.yml
+```
+
+Let's then deploy wordpress
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
+```
