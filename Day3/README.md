@@ -36,3 +36,14 @@ oc describe cm/
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/a21164de-97b7-4085-9412-dd2e08924290)
+
+Now, create the mysql deployment
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/configs-and-secrets
+oc apply -f mysql-deploy.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b608a309-021a-4595-8207-3d01d1e479cf)
