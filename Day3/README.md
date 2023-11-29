@@ -107,3 +107,16 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
+
+## Lab - Creating a helm chart for wordpress deployment
+
+The below helm create command will create a wordpress folder with chart folder structure
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day3/helm
+helm create wordpress
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f9176ef0-3f20-4d26-b660-47e5c477c4f8)
