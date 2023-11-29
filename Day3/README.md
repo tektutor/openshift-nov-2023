@@ -74,6 +74,11 @@ oc apply -f mysql-svc.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/4386fbff-4aa0-4a80-bcc7-e89df91b2664)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/50dde9cc-1862-4375-a128-d5867c2cc7fc)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/0c0e5377-196e-4a32-9e42-f278d78a7cda)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3be2b3a6-3cd5-4a79-9940-46256d6766e4)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/b7a962bf-3b71-4bc0-8c53-f815c958cd6c)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f9217737-c92a-43b7-b84a-6705458aec1d)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/dfccbf02-8c99-456b-b06a-15e70f68c5f9)
 
 
 Let's then deploy wordpress
