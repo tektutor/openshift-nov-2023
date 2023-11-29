@@ -19,10 +19,7 @@ spec:
       volumes:
       - name: mysql-external-storage
         persistentVolumeClaim:
-        valueFrom: 
-          configMapKeyRef: 
-            name: mysql-cm
-            key: pvclaimname
+          claimName: mysql-pvc-jegan 
 
       containers:
       - image: bitnami/mysql:latest
@@ -31,8 +28,13 @@ spec:
         volumeMounts:
         - name: mysql-external-storage
           mountPath: /bitnami/mysql/data
-
         env:
+        - name: PV_CLAIM_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-cm
+              key: pvclaimname
+
         - name: MYSQL_ROOT_PASSWORD
           valueFrom: 
              secretKeyRef:
