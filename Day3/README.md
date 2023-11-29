@@ -120,3 +120,19 @@ helm create wordpress
 
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f9176ef0-3f20-4d26-b660-47e5c477c4f8)
+
+Let's clean up the some stuffs in wordpress folder
+```
+tree wordpress
+cd wordpress
+echo "" > values.yaml
+cd templates
+rm -rf *
+ls -lha
+cp ../../yaml-files/* .
+cd ../..
+ls
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/43558441-8cab-4f81-b3cf-ece3449b87f3)
+
