@@ -71,6 +71,10 @@ oc apply -f mysql-deploy.yml
 oc apply -f mysql-svc.yml
 ```
 
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/4386fbff-4aa0-4a80-bcc7-e89df91b2664)
+
+
 Let's then deploy wordpress
 ```
 cd ~/openshift-nov-2023
@@ -82,3 +86,6 @@ oc apply -f wordpress-deploy.yml
 oc apply -f wordpress-svc.yml
 oc apply -f wordpress-route.yml
 ```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/6ac7700d-41be-46f7-aea0-d961c94c9281)
