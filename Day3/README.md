@@ -135,4 +135,25 @@ ls
 ```
 Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/43558441-8cab-4f81-b3cf-ece3449b87f3)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/c204d2ea-9756-4ab3-b4ed-9c9d403689fa)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5ce55556-25d1-4387-9832-7776a8f1c15f)
 
+Let's create the helm chart package for our wordpress appilcation which includes deploying wordress and mysql
+```
+cd ~/openshift-nov-2023
+cd Day3/helm
+helm package wordpress
+ls -l
+```
+
+You may now deploy wordpress into openshift with your newly packaged wordress helm chart as shown below
+```
+cd ~/openshift-nov-2023
+cd Day3/helm
+helm install wordpress-0.1.0.tgz
+helm list
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/fd41f42f-8c4b-4c45-9e1e-4ae9ce9e10f8)
+
+Let's check the Openshift console if wordpress and mysql got deployed succesffully
