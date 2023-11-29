@@ -6,9 +6,11 @@ metadata:
   name: mysql
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: mysql
+
   template:
     metadata:
       labels:
@@ -16,16 +18,17 @@ spec:
     spec:
       volumes:
       - name: mysql-external-storage
-        peristentVolumeClaim:
+        persistentVolumeClaim:
           claimName: mysql-pvc-jegan 
 
       containers:
       - image: bitnami/mysql:latest
         name: mysql
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          value: root@123
 
         volumeMounts:
         - name: mysql-external-storage
           mountPath: /bitnami/mysql/data
+
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root@123
