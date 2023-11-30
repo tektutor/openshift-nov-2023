@@ -46,8 +46,24 @@ Expected output
 
 Let's check the build status as shown below
 ```
-
+oc logs -f buildconfig/spring-ms
 ```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/0905997e-8259-4fa4-8fa4-a5d00dff6618)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/91720e4c-f791-4c70-8f81-711d2bb40d89)
+
+You may try listing the deployment
+```
+oc get deploy,rs,po
+oc get svc
+oc expose svc/spring-ms 
+```
+
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/372969d5-26f3-47e6-b444-4918cbabe6a3)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/5b745b1f-54aa-42d1-8778-a742916a4605)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/d7d4da56-f9d5-4b64-bba1-4f9fcb34e7fe)
+
+
 
 
 ## Ignore this for now - Creating an edge route
