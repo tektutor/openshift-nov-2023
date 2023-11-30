@@ -1,6 +1,9 @@
 # Day4
 
 ## Lab - Deploying Hello Microservice using Custom Docker Image from Docker Hub
+Upgrading the openssl in CentOS
+https://webhostinggeeks.com/howto/install-update-openssl-centos/
+
 ```
 oc project jegan
 oc create deployment hello --image=tektutor/openshift-maven:latest
