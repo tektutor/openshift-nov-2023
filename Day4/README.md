@@ -1,5 +1,22 @@
 # Day4
 
+## Lab - Deploying Hello Microservice using Custom Docker Image from Docker Hub
+```
+oc project jegan
+oc create deployment hello --image=tektutor/openshift-maven:latest
+oc get deploy,rs,po
+oc expose deploy/hello --port=8080
+expose svc/hello
+oc get route
+curl curl hello-jegan.apps.ocp.tektutor-ocp-labs
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/95354aa7-3230-4da0-8a71-849b3cad8c85)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/af063a56-bb90-4cae-9e95-ce76dc520f11)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f73c4d39-d6fd-4679-9b65-0d50282c1e39)
+
+
 ## Creating an edge route
 ```
 openssl genrsa -out key.key
