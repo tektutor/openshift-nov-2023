@@ -1,0 +1,22 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: report-creation
+spec:
+  schedule: "0 0 * * *"   # Cron schedule (runs daily at midnight)
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: report-creator
+            image: python:3.8
+            command: ["python", "-u"]
+            args: ["report_create.py"]
+            volumeMounts:
+            - name: data-volume
+              mountPath: /data
+          volumes:
+          - name: data-volume
+            emptyDir: {}
+          restartPolicy: OnFailure

@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-backup-job
+spec:
+  completions: 2
+  template:
+    spec:
+      containers:
+        - name: postgres-backup-container
+          image: postgres:latest
+          command: ["pg_dump", "-h", "postgres-host", "-U", "postgres-username", "db-name"]
+          env:
+            - name: PGPASSWORD
+              value: postgress-password
+          volumeMounts:
+            - name: backup-volume
+              mountPath: /backup
+      restartPolicy: OnFailure
+      volumes:
+        - name: backup-volume
+          emptyDir: {}
