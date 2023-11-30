@@ -69,5 +69,5 @@ oc expose svc/spring-ms
 openssl genrsa -out key.key
 openssl req -new -key key.key -out csr.csr -subj="/CN=hello-jegan.apps.ocp.tektutor-ocp-labs"
 openssl x509 -req -in csr.csr -signkey key.key -out crt.crt
-oc create route edge --service spring-ms --hostname nginx-jegan.apps.ocp.tektutor-ocp-labs --key key.key --cert crt.crt
+oc create route edge --service spring-ms --hostname hello-jegan.apps.ocp.tektutor-ocp-labs --key key.key --cert crt.crt
 ```
