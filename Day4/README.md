@@ -36,7 +36,18 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/59b67334-704c-4681-9767-47694ae70404)
 
 
+## Lab - Building the application within OpenShift with source strategry using source code from GitHub url
+```
+oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/spring-ms.git --strategy=source
+```
 
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/e0b7ba66-9bd4-47e9-b6c5-314d129e82ae)
+
+Let's check the build status as shown below
+```
+
+```
 
 
 ## Ignore this for now - Creating an edge route
