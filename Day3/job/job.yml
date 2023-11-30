@@ -5,12 +5,11 @@ metadata:
 spec:
   backoffLimit: 4            
   activeDeadlineSeconds: 40  
-  completions: 4             
-  parallelism: 2
+  completions: 1             
   template:
     spec:
       containers:
       - name: job-container
         image: alpine
-        command: ["sh", "-c", "echo 'Hello Job Started' && sleep 20 && exit 1"]
+        command: ["sh", "-c", "echo 'Hello Job Started' && sleep 20 && exit 0"]
       restartPolicy: Never

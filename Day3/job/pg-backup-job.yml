@@ -3,20 +3,20 @@ kind: Job
 metadata:
   name: postgres-backup-job
 spec:
-  completions: 2
+  completions: 1
   template:
     spec:
       containers:
         - name: postgres-backup-container
-          image: postgres:latest
-          command: ["pg_dump", "-h", "postgres-host", "-U", "postgres-username", "db-name"]
+          image: bitnami/postgresql:latest
+          command: ["pg_dump", "-U", "postgres", "postgres", "-f", "backup.sql"]
           env:
-            - name: PGPASSWORD
-              value: postgress-password
+            - name: POSTGRESQL_PASSWORD 
+              value: root@123 
           volumeMounts:
             - name: backup-volume
-              mountPath: /backup
-      restartPolicy: OnFailure
+              mountPath: /bitnami/postgresql
+      restartPolicy: Never 
       volumes:
         - name: backup-volume
           emptyDir: {}

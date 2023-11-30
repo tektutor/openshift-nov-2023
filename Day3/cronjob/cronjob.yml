@@ -1,9 +1,9 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: cron-job
 spec:
-  schedule: "*/10 * * * *"   # Cron schedule (runs every 10minutes)
+  schedule: "* * * * *"   # Cron schedule (runs every 1 minute)
   concurrencyPolicy: Allow
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 4
@@ -14,4 +14,5 @@ spec:
           containers:
           - name: alpine-container
             image: alpine:latest
+            command: ["sh", "-c", "echo Hello"]
           restartPolicy: OnFailure
