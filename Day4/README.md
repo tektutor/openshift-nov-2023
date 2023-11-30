@@ -6,9 +6,9 @@ oc project jegan
 oc create deployment hello --image=tektutor/openshift-maven:latest
 oc get deploy,rs,po
 oc expose deploy/hello --port=8080
-expose svc/hello
+oc expose svc/hello
 oc get route
-curl curl hello-jegan.apps.ocp.tektutor-ocp-labs
+curl hello-jegan.apps.ocp.tektutor-ocp-labs
 ```
 
 Expected output
