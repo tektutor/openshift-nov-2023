@@ -64,9 +64,7 @@ oc expose svc/spring-ms
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/d7d4da56-f9d5-4b64-bba1-4f9fcb34e7fe)
 
 
-
-
-## Ignore this for now - Creating an edge route
+## Lab - Securing our application route with edge route (https)
 ```
 openssl genrsa -out key.key
 openssl req -new -key key.key -out csr.csr -subj="/CN=hello-jegan.apps.ocp.tektutor-ocp-labs"
