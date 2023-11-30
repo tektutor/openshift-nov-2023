@@ -4,6 +4,24 @@
 Upgrading the openssl in CentOS
 https://webhostinggeeks.com/howto/install-update-openssl-centos/
 
+Installing build tools to compile openssl from source code
+```
+sudo yum groupinstall 'Development Tools'
+sudo yum install perl-IPC-Cmd perl-Test-Simple
+cd /usr/src
+wget https://www.openssl.org/source/openssl-3.0.0.tar.gz
+tar -zxf openssl-3.0.0.tar.gz
+rm openssl-3.0.0.tar.gz
+cd /usr/src/openssl-3.0.0
+./config
+make
+make test
+make install
+ln -s /usr/local/lib64/libssl.so.3 /usr/lib64/libssl.so.3
+ln -s /usr/local/lib64/libcrypto.so.3 /usr/lib64/libcrypto.so.3
+openssl version
+```
+
 ```
 oc project jegan
 oc create deployment hello --image=tektutor/openshift-maven:latest
