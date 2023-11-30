@@ -15,6 +15,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/95354aa7-3230-4da0-8a71-849b3cad8c85)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/af063a56-bb90-4cae-9e95-ce76dc520f11)
 ![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/f73c4d39-d6fd-4679-9b65-0d50282c1e39)
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3fabdcc6-3e0f-4047-9e89-8390eb233089)
 
 
 ## Creating an edge route
