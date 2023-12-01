@@ -17,6 +17,13 @@
 - the main difference is that blue-green deployments switches all the traffic from the old version (blue) to the new version (green) at once
 - while canary deployments gradually expose a small percentage of the traffic to the new version (canary) and monitor its performance and user behavior before rolling it out to the rest of the users
 
+## Lab - Checking the knative serverless cli tool version
+```
+kn version
+```
+Expected output
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/7a667fa8-b0f1-4259-8394-ef36eb17c0aa)
+
 ## Lab - Let's deploy a serverless application in Red Hat OpenShift
 It is assumed that your System Administrator has already install Red Hat OpenShift Serverless operator, created an instance of knative serving.  With which the following exercise will not work.
 
