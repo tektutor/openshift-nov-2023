@@ -16,3 +16,22 @@
 - both methods of allows us release new versions of software without disrupting the existing service
 - the main difference is that blue-green deployments switches all the traffic from the old version (blue) to the new version (green) at once
 - while canary deployments gradually expose a small percentage of the traffic to the new version (canary) and monitor its performance and user behavior before rolling it out to the rest of the users
+
+## Lab - Pod Autoscaling
+```
+oc process -f https://examples.openshift.pub/deploy/autoscaling/pod-autoscaling-template.yaml | oc apply -f -
+```
+
+Test Autoscaling
+```
+# Note - ab is Apache Bench tool to benchmark the applications
+ab 'http://choas-professor-omd.paas.osp.consol.de/chaos/heapheap?size=500&time=10000'
+ab 'http://choas-professor-omd.paas.osp.consol.de/chaos/cpu?threads=100&keepAlive=20000'
+ab -c 10 -n 100 'http://choas-professor-omd.paas.osp.consol.de/chaos/cpu?threads=100&keepAlive=200'
+```
+
+Clean up
+```
+oc get all -o name | xargs -n1  oc delete
+oc delete hpa/choas-professor
+```
