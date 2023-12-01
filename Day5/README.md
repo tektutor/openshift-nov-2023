@@ -1,5 +1,11 @@
 # Day 5
 
+## Kindly complete the post-test at the below url from RPS lab machine
+https://app.mymapit.in/code4/tiny/Tq5zy0
+
+## Feedback link :
+https://tcheck.co/HTCRH6
+
 ## What is a canary deployment strategy?
 - is a progressive rollout of an application that splits traffic between an already-deployed version and a new version
 - rolling it out to a subset of users before rolling out fully
