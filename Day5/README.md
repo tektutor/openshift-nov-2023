@@ -21,7 +21,7 @@
 It is assumed that your System Administrator has already install Red Hat OpenShift Serverless operator, created an instance of knative serving.  With which the following exercise will not work.
 
 ```
-kn service create greeter --image=quay.io/rhdevelopers/knative-greeter:quarkus
+kn service create greeter --image=quay.io/rhdevelopers/knative-tutorial-greeter:quarkus
 ```
 
 Expected output
