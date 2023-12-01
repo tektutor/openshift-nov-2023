@@ -9,3 +9,10 @@
 - we can ensure the new version of our application is reliable before we can deliver it to all users
 - we could deploy the new version of our application to a limited number of pods
 - the old version would continue to run, but with more of the traffic being sent to the new pods
+
+## Blue Green vs Canary Deployment Strategy
+- Blue-green and Canary deployments are two popular strategies for continuous delivery
+- aims to deliver software updates faster and more reliably
+- both methods of allows us release new versions of software without disrupting the existing service
+- the main difference is that blue-green deployments switches all the traffic from the old version (blue) to the new version (green) at once
+- while canary deployments gradually expose a small percentage of the traffic to the new version (canary) and monitor its performance and user behavior before rolling it out to the rest of the users
