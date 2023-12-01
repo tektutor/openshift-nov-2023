@@ -8,15 +8,23 @@ spec:
     spec:
       containers:
         - name: postgres-backup-container
-          image: bitnami/postgresql:latest
-          command: ["pg_dump", "-U", "postgres", "postgres", "-f", "backup.sql"]
+          image: ubuntu:22.04 
+          command: ["tar", "cvfz","/backup/postgres-backup.tar.gz","--absolute-names","/bitnami/postgresql"]
           env:
             - name: POSTGRESQL_PASSWORD 
               value: root@123 
           volumeMounts:
-            - name: backup-volume
+            - name: pg-volume
               mountPath: /bitnami/postgresql
+
+            - name: pgbackup-volume
+              mountPath: /backup
       restartPolicy: Never 
       volumes:
-        - name: backup-volume
-          emptyDir: {}
+        - name: pg-volume
+          persistentVolumeClaim: 
+          claimName: pg-pvc-jegan # Replace 'jegan' with your name
+
+        - name: pgbackup-volume
+          persistentVolumeClaim: 
+          claimName: pgbackup-pvc-jegan # Replace 'jegan' with your name
