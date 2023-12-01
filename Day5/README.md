@@ -17,7 +17,20 @@
 - the main difference is that blue-green deployments switches all the traffic from the old version (blue) to the new version (green) at once
 - while canary deployments gradually expose a small percentage of the traffic to the new version (canary) and monitor its performance and user behavior before rolling it out to the rest of the users
 
-## Lab - Pod Autoscaling
+## Lab - Let's deploy a serverless application in Red Hat OpenShift
+It is assumed that your System Administrator has already install Red Hat OpenShift Serverless operator, created an instance of knative serving.  With which the following exercise will not work.
+
+```
+kn service create greeter --image=quay.io/rhdevelopers/knative-greeter:quarkus
+```
+
+Expected output
+
+
+
+
+
+## Ignore this Lab - Pod Autoscaling
 ```
 oc process -f https://examples.openshift.pub/deploy/autoscaling/pod-autoscaling-template.yaml | oc apply -f -
 ```
