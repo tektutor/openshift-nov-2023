@@ -34,8 +34,32 @@ kn service create greeter --image=quay.io/rhdevelopers/knative-tutorial-greeter:
 Expected output
 
 
+## Lab - Autoscaling knative application based on knative events
+In this lab exercise, you will be creating serverless knative application. 
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day5/serverless/eventing
+oc apply -f hello-sink.yml
+kn service list
+```
+
+Expected output
+
+Now you can create the ping source application which would trigger the hello sink application.  This is a knative cronjob.
+```
+cd ~/openshift-nov-2023
+git pull
+cd Day5/serverless/eventing
+oc apply -f ping-source.yml
+kn source ping list
+```
+
+Now head over to OpenShift webconsole to see the topology in the Developer view
+![image](https://github.com/tektutor/openshift-nov-2023/assets/12674043/3e50f8bc-4109-4484-b122-c831c0a35694)
 
 
+The the ping-source cronjob triggers the hello knative application every minute. For every message 1 Pod will be auto-scaled, you could observe this in the web console.
 
 ## Ignore this Lab - Pod Autoscaling
 ```
